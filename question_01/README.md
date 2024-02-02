@@ -33,7 +33,9 @@ O código original está disponível no arquivo `src/original_function/original_
 A função foi transformada em uma aplicação, a fim de validar as alterações sugeridas. O *build* deve ser efetuado dentro de um diretório chamado *build*, utilizando os comandos CMake:
 
 > cmake ../.
+
 > cmake --build .
+
 > ./app/app
 
 A aplicação contém apenas *01* caso de teste.
