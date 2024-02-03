@@ -2,9 +2,9 @@
 
 ## A função possui erros de compilação
 
-- A função espera retornar um ponteiro de *char*, mas o código tenta retornar um ponteiro de inteiro. O compilador não consegue converter naturalmente, isto é, sem fazer um *cast*. Além disso, não há necessidade de retornar a variável **packet**, pois como esta é um ponteiro, o valor alterado na posição de memória para onde ela aponta já está sendo acessado pela variável passada como parâmetro na função.
+- A função espera retornar um ponteiro de *char*, mas o código tenta retornar um ponteiro de inteiro. O compilador não consegue converter naturalmente, isto é, sem fazer um *cast*. Além disso, não há necessidade de retornar o ponteiro **packet**, pois como este é um ponteiro, o valor alterado na posição de memória para onde ele aponta já está sendo acessado pelo ponteiro passado como parâmetro na função.
 
-- "Narrowing conversion". Durante a inicialização do ponteiro de *char* **header**, o compilador tenta converter um valor inteiro (*128*) que ultrapassa a capacidade de armazenamento do tipo *char*, que permite atribuições de valores entre *-127* e *127*.
+- "Narrowing conversion". Durante a inicialização do *array* de *char* **header**, o compilador tenta converter um valor inteiro (*128*) que ultrapassa a capacidade de armazenamento do tipo *char*, que permite atribuições de valores entre *-127* e *127*. A solução mais viável é transformar **header** em um *array* de inteiros.
 
 ## A função possui erros de lógica
 
