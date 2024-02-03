@@ -2,9 +2,9 @@
 
 ## A função possui erros de compilação
 
-- A função espera retornar um ponteiro de *char*, mas o código tenta retornar um ponteiro de inteiro. O compilador não consegue converter naturalmente.
+- A função espera retornar um ponteiro de *char*, mas o código tenta retornar um ponteiro de inteiro. O compilador não consegue converter naturalmente, isto é, sem fazer um *cast*. Além disso, não há necessidade de retornar a variável **packet**, pois como esta é um ponteiro, o valor alterado na posição de memória para onde ela aponta já está sendo acessado pela variável passada como parâmetro na função.
 
-- "Narrowing conversion". Durante a inicialização do ponteiro de *char* **header**, o compilador tenta converter um inteiro que ultrapassa a capacidade de armazenamento do tipo *char* (*128*).
+- "Narrowing conversion". Durante a inicialização do ponteiro de *char* **header**, o compilador tenta converter um valor inteiro (*128*) que ultrapassa a capacidade de armazenamento do tipo *char*, que permite atribuições de valores entre *-127* e *127*.
 
 ## A função possui erros de lógica
 
@@ -16,9 +16,9 @@ for (i=0; i < 12; i++)
     packet[i] = header[i];
 ```
 
-- O primeiro *loop* desloca erroneamente os elementos de **packet**. Os elementos da posição *i+3* serão perdidos, pois serão substituídos pelos elementos de posição *i*.
+- O primeiro *loop* desloca erroneamente os elementos de **packet**. Os elementos de posição *i+3* serão perdidos, pois serão substituídos pelos elementos de posição *i*.
 
-- Os *9* primeiros elementos de **packet** serão sobrepostos pelos elementos de **header**, pois apenas *3* posições foram deslocadas no primeiro ponteiro, não deixando espaço suficiente para receber os *12* elementos do segundo ponteiro.
+- Os *9* primeiros elementos de **packet** serão sobrepostos pelos elementos de **header**, pois apenas *3* posições foram deslocadas no primeiro ponteiro, deixando espaço insuficiente para receber os *12* elementos do segundo ponteiro.
 
 ## Sugestões de melhoria
 
