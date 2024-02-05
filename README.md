@@ -1,14 +1,14 @@
 # dm_contest
 
-## Introdução
-
-Esse repositório visa compartilhar as respostas do desafio proposto no arquivo **Teste Técnico P&D - Simplificado**.
+Esse repositório visa compartilhar as respostas do desafio proposto no arquivo **Teste Técnico P&D - Simplificado.pdf**.
 
 ## Direcionamentos
 
-- O desafio possui três questões cujas respostas se encontram nos diretórios `./question_01`, `./question_02` e `./question_03`, respectivamente pelo número das questões;
+- O desafio possui três questões cujas respostas se encontram nos diretórios `/question_01`, `/question_02` e `/question_03`, respectivamente pelo número das questões;
 
-- Para conferir as respostas, é necessário ler o arquivo README.md da cada questão.
+- Para conferir as respostas, é necessário ler o arquivo README.md da cada questão;
+
+- Quando necessário, foi desenvolvido um código com pelo menos um caso de teste, para validar a resposta.
 
 ## *Build* e *Run*
 
