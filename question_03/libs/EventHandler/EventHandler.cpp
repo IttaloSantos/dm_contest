@@ -5,6 +5,7 @@
 
 static bool is_event_valid(Events event);
 static bool is_state_valid(States state);
+static void call_to_action(States state);
 
 StateMachine *StateMachine::p_instance = NULL;
 
@@ -18,7 +19,20 @@ States process_event(States current_state, Events new_event)
 
     States next_state = state_machine->get_next_state(new_event);
 
-    switch (next_state)
+    call_to_action(next_state);
+
+    return next_state;
+}
+
+/*####################################################################################
+
+                                PRIVATE FUNCTIONS
+
+#####################################################################################*/
+
+static void call_to_action(States state)
+{
+    switch(state)
     {
     case INITIAL_STATE:
         std::cout << "INITIAL_STATE" << std::endl;
@@ -39,15 +53,7 @@ States process_event(States current_state, Events new_event)
     default:
         throw std::logic_error{"Invalid state!"};
     }
-
-    return next_state;
 }
-
-/*####################################################################################
-
-                                PRIVATE FUNCTIONS
-
-#####################################################################################*/
 
 static bool is_event_valid(Events event)
 {
