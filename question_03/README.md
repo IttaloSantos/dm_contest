@@ -2,8 +2,8 @@
 
 # Máquina de estados - Requisitos
 
-![Alt text](./images/State%20Machine.jpg)
+![Image](./images/State%20Machine.jpg =550x410)
 
 # Fluxograma do código
 
-![Alt text](./images/Fluxograma.jpg)
+![Image](./images/Fluxograma.jpg =600x405)
