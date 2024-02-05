@@ -8,7 +8,7 @@
 
 A figura abaixo foi elaborada com base no entendimento dos eventos, das transições e dos estados descritos na tabela da questão 3.
 
-![Image](./images/State%20Machine.jpg)
+<img src="./images/State%20Machine.jpg" alt=State%20Machine width=300/>
 
 - **Requisito 2**: desenvolver uma função que receba como parâmetro o estado atual e o novo evento. 
 
@@ -30,7 +30,7 @@ A figura abaixo foi elaborada com base no entendimento dos eventos, das transiç
 
 Abaixo, encontra-se o fluxograma-macro do código desenvolvido.
 
-![Image](./images/Fluxograma.jpg)
+<img src="./images/Fluxograma.jpg" alt="fluxograma" width="200"/>
 
 Basicamente, o código tem três módulos de biblioteca e a aplicação.
 
