@@ -7,8 +7,6 @@ static bool is_event_valid(Events event);
 static bool is_state_valid(States state);
 static void call_to_action(States state);
 
-StateMachine *StateMachine::p_instance = NULL;
-
 States process_event(States current_state, Events new_event)
 {
     if(!is_state_valid(current_state) || !is_event_valid(new_event)) throw std::logic_error{"Invalid state!"};
