@@ -38,7 +38,7 @@ namespace Action
 class StateMachine
 {
     private:
-        static map<int, map<int, int>> transitions;
+        map<int, map<int, int>> transitions;
         States state;
 
         void init_state_transitions(void);
