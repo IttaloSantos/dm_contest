@@ -1,0 +1,25 @@
+#ifndef CONFIG_H
+#define CONFIG_H
+
+#define NUMBER_OF_STATES 5
+#define NUMBER_OF_EVENTS 5
+
+enum States
+{
+    INITIAL_STATE = 0,
+    LINK_DOWN,
+    SENDING_START,
+    SENDING_CONFIG,
+    KEEP_ALIVE
+};
+
+enum Events
+{
+    INTERFACE_NOK,
+    INTERFACE_OK,
+    OK_PACKAGE_RECEIVED,
+    NOK_PACKAGE_RECEIVED,
+    TIMEOUT
+};
+
+#endif
