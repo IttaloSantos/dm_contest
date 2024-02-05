@@ -4,9 +4,7 @@
 
 - **Requisito 1**: desenvolver uma máquina de estados de um protocolo de conexão entre dois equipamentos (mestre/escravo).
 
-### Máquina de estados
-
-A figura abaixo foi elaborada com base no entendimento dos eventos, das transições e dos estados descritos na tabela da questão 3.
+A máquina de estados abaixo foi elaborada com base no entendimento dos eventos, das transições e dos estados descritos na tabela da questão 3.
 
 <img src="./images/State%20Machine.jpg" alt=State%20Machine width=500/>
 
