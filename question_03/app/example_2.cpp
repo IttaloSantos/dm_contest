@@ -115,7 +115,10 @@ States process_event(States current_state, Events new_event)
     switch (next_state)
     {
     case INITIAL_STATE:
+        cout << "INITIAL_STATE" << endl;
+        break;
     case LINK_DOWN:
+        cout << "LINK_DOWN" << endl;
         break;
     case SENDING_START:
         Action::send_start();
