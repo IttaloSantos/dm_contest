@@ -1,8 +1,16 @@
-add_executable(example_1
-    example_1.cpp
+set(EXAMPLES 
+    normal 
+    link_down 
+    package_error
+    timeout
 )
 
-target_link_libraries(example_1
-    PRIVATE
-    EventHandler
-)
+foreach(FILE ${EXAMPLES})
+    add_executable(${FILE}
+        ${FILE}.cpp
+    )
+    target_link_libraries(${FILE}
+        PRIVATE
+        EventHandler
+    )
+endforeach()
