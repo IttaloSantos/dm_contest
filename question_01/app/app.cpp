@@ -10,6 +10,7 @@ static void show_packet(int *packet, int length);
 
 int main(int argc, char const *argv[])
 {
+    //! packet size >= length + header_length
     int packet[200] = {0x45, 0x32, 0x44, 0x15};
     int length[1]   = {4};
 

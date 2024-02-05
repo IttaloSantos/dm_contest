@@ -8,6 +8,8 @@ bool insert_header(int *packet, int *length, int *header, int header_length)
                                                        : true;
     if(!result) return result;
 
+    /* It is assumed that there is sufficient memory allocated for packet 
+    to add header in it */
     std::memcpy(packet+header_length, packet, *length*sizeof(int));
     std::memcpy(packet, header, header_length*sizeof(int));
 

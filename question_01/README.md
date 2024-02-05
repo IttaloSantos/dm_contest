@@ -39,3 +39,7 @@ A função foi transformada em uma aplicação, a fim de validar as alterações
 > ./app/app
 
 A aplicação contém apenas *01* caso de teste.
+
+## Considerações
+
+Assume-se que a memória alocada para **packet** >= **length** + **header_length**
