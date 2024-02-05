@@ -19,6 +19,8 @@ States process_event(States current_state, Events new_event)
 
     States next_state = state_machine->get_next_state(new_event);
 
+    if(next_state == INITIAL_STATE) return current_state;
+
     call_to_action(next_state);
 
     return next_state;
@@ -34,9 +36,6 @@ static void call_to_action(States state)
 {
     switch(state)
     {
-    case INITIAL_STATE:
-        std::cout << "INITIAL_STATE" << std::endl;
-        break;
     case LINK_DOWN:
         std::cout << "LINK_DOWN" << std::endl;
         break;
