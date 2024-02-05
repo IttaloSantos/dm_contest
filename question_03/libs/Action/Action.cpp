@@ -3,18 +3,18 @@
 
 bool Action::send_start(void)
 {
-    std::cout << "Start sent!" << std::endl;
+    std::cout << "SENDING START" << std::endl;
     return true;
 }
 
 bool Action::send_config(void)
 {
-    std::cout << "Config sent!" << std::endl;
+    std::cout << "SENDING CONFIG" << std::endl;
     return true;
 }
 
 bool Action::send_keep_alive(void)
 {
-    std::cout << "Keep Alive sent!" << std::endl;
+    std::cout << "SENDING KEEP ALIVE" << std::endl;
     return true;
 }
