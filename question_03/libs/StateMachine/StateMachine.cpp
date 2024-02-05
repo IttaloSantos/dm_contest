@@ -1,5 +1,7 @@
 #include "StateMachine.h"
 
+StateMachine *StateMachine::p_instance = NULL;
+
 StateMachine::StateMachine()
 {
     this->state = INITIAL_STATE;
