@@ -14,7 +14,7 @@ void StateMachine::init_state_transitions(void)
     {
         for(int j = 0; j < NUMBER_OF_EVENTS; j++)
         {
-            bool link_down  = j == INTERFACE_NOK;
+            bool link_down  = j == INTERFACE_NOK || (i == LINK_DOWN && j != INTERFACE_OK);
             bool send_start = (i == LINK_DOWN && j == INTERFACE_OK) ||
                               (i != LINK_DOWN && j == TIMEOUT)      ||
                               (i != LINK_DOWN && i != SENDING_CONFIG && j == NOK_PACKAGE_RECEIVED);
