@@ -40,7 +40,7 @@ A Máquina de estados foi desenvolvida como uma classe. Ela está presente no m�
 
 O módulo **Action** contém os métodos que simbolicamente simulam as ações associadas a cada evento, retornando um *debug*.
 
-Para a camada de aplicação, foram desenvolvidos 4 casos de teste:
+Para a camada de aplicação, foram desenvolvidos 5 casos de teste:
 
 - Normal - Possui o fluxo normal de conexão partindo do evento de SENDING_START;
 
@@ -48,7 +48,9 @@ Para a camada de aplicação, foram desenvolvidos 4 casos de teste:
 
 - Package Error - Possui os casos em que uma mensagem de NOK_PACKAGE_RECEIVED é recebida;
 
-- Timeout - Possui os casos em que não há resposta do escravo, sendo simbolizado pelo Evento de TIMEOUT.
+- Timeout - Possui os casos em que não há resposta do escravo, sendo simbolizado pelo Evento de TIMEOUT;
+
+- Invalid states - Possui casos em que estados inválidos são recebidos.
 
 ## Rodando o programa
 

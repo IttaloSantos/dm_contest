@@ -3,6 +3,7 @@ set(EXAMPLES
     link_down 
     package_error
     timeout
+    invalid_states
 )
 
 foreach(FILE ${EXAMPLES})
