@@ -20,7 +20,7 @@ typedef struct list
 };
 ```
 
-- Se X for um nó intermediário, a função faz com que o nó anterior a X aponte para o nó seguinte a X, enquanto que nó seguinte tem seu ponteiro "previous" apontado para o nó anterior a X, eliminando este da lista;
+- Se X for um nó intermediário, a função faz com que o nó anterior a X aponte para o nó seguinte a X, enquanto que o nó seguinte tem seu ponteiro "previous" apontado para o nó anterior a X, eliminando este da lista;
 
 - Se X for o próprio **List_head** e não houver mais nós na lista, a função faz com que **List_head** aponte para NULL;
 
@@ -28,7 +28,13 @@ typedef struct list
 
 ## A função funciona?
 
-Para o propósito descrito acima, sim, a função funciona.
+Não, a função não funciona por dois motivos:
+
+- Ocorre um erro de segmentação ao tentar acessar o ponteiro **entry** após realizar o *free* no fim da função;
+
+- O método comum de remoção de um nó da lista é remover o nó que possuir o valor igual a **key**;
+
+- É necessário que, dentro da última condição, ```else if(noPrev)```, o ponteiro **entry->next->previous** seja apontado para NULL, a fim de realizar a remoção do nó com sucesso.
 
 ## A função é reentrante? Por quê?
 
@@ -38,7 +44,7 @@ Uma função reentrante, geralmente, não utiliza variáveis globais, pois as di
 
 ## Melhorias e sugestões
 
-Não foram identificados *bugs* ou oportunidades de melhorias significativas. No entanto, tornando o código um pouco mais "limpo":
+Corrigindo os *bugs* identificados:
 
 ```
 void removeEntry(int key)
@@ -48,7 +54,7 @@ void removeEntry(int key)
 
     for(entry = List_head; entry != NULL; entry = entry->next)
     {
-        if(entry->key != key) break;
+        if(entry->key == key) break;
     }
     
     if(entry == NULL) return;
@@ -65,9 +71,13 @@ void removeEntry(int key)
         noNext = 0;
     }
 
-    free(entry);
-
     if((noPrev) && (noNext)) List_head = NULL;
-    else if(noPrev)          List_head = entry->next;
+    else if(noPrev)
+    {
+        List_head = entry->next;
+        entry->next->previous = NULL;
+    }
+
+    free(entry);
 }
 ```
