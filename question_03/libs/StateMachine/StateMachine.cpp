@@ -1,10 +1,8 @@
 #include "StateMachine.h"
 
-StateMachine *StateMachine::p_instance = NULL;
-
-StateMachine::StateMachine()
+StateMachine::StateMachine(States _state)
 {
-    this->state = INITIAL_STATE;
+    this->state = _state;
     StateMachine::init_state_transitions();
 }
 
