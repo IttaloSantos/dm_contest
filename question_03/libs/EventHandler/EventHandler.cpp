@@ -11,11 +11,9 @@ States process_event(States current_state, Events new_event)
 {
     if(!is_state_valid(current_state) || !is_event_valid(new_event)) throw std::logic_error{"Invalid state!"};
 
-    StateMachine *state_machine = StateMachine::get_instance();
+    StateMachine StateMachine(current_state);
 
-    state_machine->set_state(current_state);
-
-    States next_state = state_machine->get_next_state(new_event);
+    States next_state = StateMachine.get_next_state(new_event);
 
     if(next_state == INITIAL_STATE) return current_state;
 
