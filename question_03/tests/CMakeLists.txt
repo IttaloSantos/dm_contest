@@ -1,5 +1,3 @@
-include_directories("${PROJECT_SOURCE_DIR}/googletest/include")
-
 add_executable(testCases
     testCases.cpp
 )
