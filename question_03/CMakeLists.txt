@@ -6,6 +6,5 @@ set(CMAKE_C_STANDARD_REQUIRED True)
 
 enable_testing()
 
-add_subdirectory(googletest)
 add_subdirectory(tests)
 add_subdirectory(libs)
